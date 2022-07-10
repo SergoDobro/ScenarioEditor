@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <ScrollViewer CanContentScroll="True">
-        <local:ElementAndBooleans OnOpen="ElementAndBooleans_OnOpen"/>
+        <StackPanel>
+            <DockPanel>
+                <Button Content="Save Scenario" Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"/>
+                <Button Content="Load Scenario (And save current)" Width="200" HorizontalAlignment="Left" Margin="20,5,5,5"/>
+            </DockPanel>
+            <local:ElementAndBooleans OnOpen="ElementAndBooleans_OnOpen"/>
+        </StackPanel>
     </ScrollViewer>
 </Window>

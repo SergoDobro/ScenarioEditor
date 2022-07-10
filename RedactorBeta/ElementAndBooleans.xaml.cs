@@ -43,6 +43,7 @@ namespace RedactorBeta
             Margin = new Thickness(20, 0, 0, 0);
 
             this.path = path;
+            //return;
             LoadSettings();
             name = path.Split('\\').Last();
             DetermineFormat();
@@ -209,6 +210,16 @@ namespace RedactorBeta
         {
             loginsAndPasswords.Items.Remove(cbi);
             Save(null, null);
+        }
+
+        public void CloseSave()
+        {
+            Save(null, null);
+            foreach (var item in panel.Children)
+            {
+                if (item is ElementAndBooleans)
+                    (item as ElementAndBooleans).CloseSave();
+            }
         }
 
     }
