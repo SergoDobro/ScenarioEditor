@@ -1,0 +1,27 @@
+﻿<Window x:Class="normaltree.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:normaltree"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TreeView  HorizontalAlignment="Left">
+            <TreeViewItem Header="aha" HorizontalAlignment="Right"/>
+            <TreeViewItem Header="uhu">
+                <TreeViewItem Header="aha"/>
+                <TreeViewItem Header="aha"/>
+                <TreeViewItem Header="aha" Width="800">
+                    <local:SelectItem ctn="Mans" Width="500"/>
+                    <TreeViewItem Header="aha" Width="800">
+                        <local:SelectItem ctn="Mans" Width="500">
+
+                            <local:SelectItem ctn="Mans" Width="500"/>
+                        </local:SelectItem>
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
