@@ -13,20 +13,24 @@
             <Label x:Name="contentName" Content="Test" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <CheckBox Margin="2,0,1,0" VerticalAlignment="Center"
-                          x:Name="isVisible" IsChecked="{Binding isVisible}" Checked="Save"/>
+                          x:Name="isVisible" IsChecked="{Binding isVisible}" Checked="Save"
+                          ToolTip="Виден ли файл пользователю"/>
                 <CheckBox Margin="1,0,2,0" VerticalAlignment="Center"
-                          x:Name="hasPassword" IsChecked="{Binding hasPassword}" Checked="Save"/>
+                          x:Name="hasPassword" IsChecked="{Binding hasPassword}" Checked="Save"
+                          ToolTip="Есть ли пароли"/>
                 <ComboBox Width="200" 
                           BorderThickness="0"
                           Background="Transparent"
                           SelectedIndex="0"
                           x:Name="loginsAndPasswords"
-                          IsEnabled="{Binding hasPassword}">
+                          IsEnabled="{Binding hasPassword}"
+                          ToolTip="Список паролей">
                     <StackPanel  HorizontalAlignment="Right">
                         <Button Content="➕" Click="Button_Click_1" 
                             HorizontalContentAlignment="Center"
                             VerticalContentAlignment="Center" 
-                            HorizontalAlignment="Right" Margin="2,0,2,0"/>
+                            HorizontalAlignment="Right" Margin="2,0,2,0"
+                                ToolTip="Добавить логин с паролем"/>
                     </StackPanel>
                 </ComboBox>
             </StackPanel>

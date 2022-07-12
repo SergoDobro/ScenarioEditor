@@ -9,10 +9,20 @@
     <ScrollViewer CanContentScroll="True">
         <StackPanel>
             <DockPanel>
-                <Button Content="Save Scenario" Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"/>
-                <Button Content="Load Scenario (And save current)" Width="200" HorizontalAlignment="Left" Margin="20,5,5,5"/>
+                <Button Content="Сохранить"
+                        Click="Button_Click_1"
+                        Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"
+                        />
+                <Button Content="Загрузить (и сохранить)"
+                        Click="Button_Click"
+                        Width="200" HorizontalAlignment="Left" Margin="20,5,5,5"/>
+                <Button Content="Инструкция"
+                        Click="Button_Click_2"
+                        Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"/>
             </DockPanel>
-            <local:ElementAndBooleans OnOpen="ElementAndBooleans_OnOpen"/>
+            <StackPanel x:Name="folderer">
+                
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </Window>
