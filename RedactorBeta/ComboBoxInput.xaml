@@ -11,14 +11,17 @@
         <TextBox Text="{Binding Item1}"  MinWidth="30"
                                  Margin="2,0,2,0"
                 TextChanged="TextBox_TextChanged"
-                 x:Name="login"/>
+                 x:Name="login"
+                 ToolTip="Логин"/>
         <TextBox Text="{Binding Item2}"  MinWidth="30"
                                  Margin="2,0,2,0"
                 TextChanged="TextBox_TextChanged" 
-                 x:Name="password"/>
+                 x:Name="password"
+                 ToolTip="Пароль"/>
         <Button Content="✖" Click="Button_Click"
                             HorizontalContentAlignment="Center"
                             VerticalContentAlignment="Center"
-                            HorizontalAlignment="Right" Margin="2,0,2,0"/>
+                            HorizontalAlignment="Right" Margin="2,0,2,0"
+                 ToolTip="Удалить пару"/>
     </DockPanel>
 </UserControl>

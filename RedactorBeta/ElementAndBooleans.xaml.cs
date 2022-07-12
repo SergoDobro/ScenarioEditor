@@ -23,8 +23,8 @@ namespace RedactorBeta
     {
         const string extentionString = ".config";
         public event Action<object> OnOpen;
-        private static string pathToMain = Directory.GetCurrentDirectory()+ "\\a";
-        private string path;
+        public static string pathToMain = Directory.GetCurrentDirectory();
+        public string path;
         private string name;
         private string format;
         DataClass dataClass;
@@ -196,6 +196,7 @@ namespace RedactorBeta
             {
                 CollapseButton.Content = "▶";
                 isOpened = false;
+                CloseSave();
                 panel.Children.Clear();
             }
         }
