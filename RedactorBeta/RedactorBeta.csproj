@@ -78,9 +78,11 @@
     <Compile Include="ComboBoxInput.xaml.cs">
       <DependentUpon>ComboBoxInput.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataClass.cs" />
     <Compile Include="ElementAndBooleans.xaml.cs">
       <DependentUpon>ElementAndBooleans.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extention.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

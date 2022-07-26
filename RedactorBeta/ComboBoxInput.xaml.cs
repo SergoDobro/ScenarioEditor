@@ -39,13 +39,13 @@ namespace RedactorBeta
 
         public ComboBoxInput(MyTuple tuple = null)
         {
-            loginPassword.Item1 = "Логин";
-            loginPassword.Item2 = "Пароль";
+            loginPassword.Log = "Логин";
+            loginPassword.Pas = "Пароль";
             if (tuple!=null)
             {
-                if (tuple.Item1 != null)
+                if (tuple.Log != null)
                 {
-                    if (tuple.Item2 != null)
+                    if (tuple.Pas != null)
                     {
                         loginPassword = tuple;
                     }

@@ -16,8 +16,6 @@ D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\RedactorBeta.
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\RedactorBeta.csproj.CoreCompileInputs.cache
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\RedactorBeta.exe
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\RedactorBeta.pdb
-D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\IconImage.g.cs
-D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\IconImage.baml
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\ComboBoxInput.baml
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\ComboBoxInput.g.cs
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\bin\Debug\Newtonsoft.Json.dll
