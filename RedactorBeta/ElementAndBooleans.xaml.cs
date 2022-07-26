@@ -224,22 +224,4 @@ namespace RedactorBeta
         }
 
     }
-    public static class Extention
-    {
-        public static string LevelUp_Debug(this string path)
-        {
-            return path.Remove(path.Length - 1 - path.Split('\\').Last().Length);
-        }
-    }
-    public class DataClass
-    {
-        public bool isVisible { get; set; } = false;
-        public bool hasPassword { get; set; } = false;
-        public List<MyTuple> loginsAndPasswords { get; set; } = new List<MyTuple>();
-    }
-    public class MyTuple
-    {
-        public string Item1 { get; set; } = "";
-        public string Item2 { get; set; } = "";
-    }
 }
