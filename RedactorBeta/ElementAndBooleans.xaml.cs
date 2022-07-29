@@ -129,7 +129,10 @@ namespace RedactorBeta
             dataClass.LoginsAndPasswords = new Dictionary<string, string>();
             for (int i = 0; i < loginsAndPasswords.Items.Count-1; i++)
             {
-                dataClass.LoginsAndPasswords.Add((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log, (loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Pas);
+                if (!dataClass.LoginsAndPasswords.ContainsKey((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log))
+                {
+                    dataClass.LoginsAndPasswords.Add((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log, (loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Pas);
+                }
             }
             string str = JsonConvert.SerializeObject(dataClass);
             File.WriteAllText(path + extentionString, str);
