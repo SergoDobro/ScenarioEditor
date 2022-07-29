@@ -126,10 +126,10 @@ namespace RedactorBeta
         }
         public void Save(object sender, RoutedEventArgs e)
         {
-            dataClass.loginsAndPasswords = new List<MyTuple>();
+            dataClass.LoginsAndPasswords = new Dictionary<string, string>();
             for (int i = 0; i < loginsAndPasswords.Items.Count-1; i++)
             {
-                dataClass.loginsAndPasswords.Add((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword);
+                dataClass.LoginsAndPasswords.Add((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log, (loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Pas);
             }
             string str = JsonConvert.SerializeObject(dataClass);
             File.WriteAllText(path + extentionString, str);
@@ -164,12 +164,13 @@ namespace RedactorBeta
             }
             DataContext = dataClass;
 
-            foreach (var item in dataClass.loginsAndPasswords)
+            foreach (var item in dataClass.LoginsAndPasswords)
             {
-                loginsAndPasswords.Items.Insert(0, new ComboBoxInput(item));
+                loginsAndPasswords.Items.Insert(0, new ComboBoxInput(new MyTuple() { Log=item.Key, Pas=item.Value }));
                 (loginsAndPasswords.Items[0] as ComboBoxInput).OnDelete += Delete;
                 (loginsAndPasswords.Items[0] as ComboBoxInput).OnEdit += Save;
             }
+            loginsAndPasswords.SelectedIndex = 0;
         }
 
         bool isOpened = false;

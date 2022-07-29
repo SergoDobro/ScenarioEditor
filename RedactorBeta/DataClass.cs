@@ -9,9 +9,12 @@ namespace RedactorBeta
     //instance of this class is serializable via json
     public class DataClass
     {
-        public bool isVisible { get; set; } = false;
-        public bool hasPassword { get; set; } = false;
-        public List<MyTuple> loginsAndPasswords { get; set; } = new List<MyTuple>();
+        public int Difficulty { get; set; } = 3;
+        public bool CanBeChanged { get; set; } = false;
+        public bool CanBeCopied { get; set; } = false;
+        public bool CanBeDeleted { get; set; } = false;
+        public bool HasPassword { get; set; } = false;
+        public Dictionary<string, string> LoginsAndPasswords { get; set; } = new Dictionary<string, string>();
     }
     public class MyTuple
     {
