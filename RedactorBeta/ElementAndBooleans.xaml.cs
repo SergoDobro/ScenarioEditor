@@ -59,6 +59,8 @@ namespace RedactorBeta
                 CollapseButton.Visibility = Visibility.Hidden;
             }
 
+            loginsAndPasswords.OnSave += () => { Save(null, null); };
+
         }
         public void DetermineFormat()
         {
@@ -127,13 +129,7 @@ namespace RedactorBeta
         public void Save(object sender, RoutedEventArgs e)
         {
             dataClass.LoginsAndPasswords = new Dictionary<string, string>();
-            for (int i = 0; i < loginsAndPasswords.Items.Count-1; i++)
-            {
-                if (!dataClass.LoginsAndPasswords.ContainsKey((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log))
-                {
-                    dataClass.LoginsAndPasswords.Add((loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Log, (loginsAndPasswords.Items[i] as ComboBoxInput).loginPassword.Pas);
-                }
-            }
+            loginsAndPasswords.SaveToDataClass(dataClass);
             string str = JsonConvert.SerializeObject(dataClass);
             File.WriteAllText(path + extentionString, str);
         }
@@ -166,14 +162,7 @@ namespace RedactorBeta
                 File.WriteAllText(path + extentionString, JsonConvert.SerializeObject(dataClass));
             }
             DataContext = dataClass;
-
-            foreach (var item in dataClass.LoginsAndPasswords)
-            {
-                loginsAndPasswords.Items.Insert(0, new ComboBoxInput(new MyTuple() { Log=item.Key, Pas=item.Value }));
-                (loginsAndPasswords.Items[0] as ComboBoxInput).OnDelete += Delete;
-                (loginsAndPasswords.Items[0] as ComboBoxInput).OnEdit += Save;
-            }
-            loginsAndPasswords.SelectedIndex = 0;
+            loginsAndPasswords.Load(dataClass);
         }
 
         bool isOpened = false;
@@ -203,18 +192,6 @@ namespace RedactorBeta
                 CloseSave();
                 panel.Children.Clear();
             }
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            ComboBoxInput cbi = new ComboBoxInput();
-            loginsAndPasswords.Items.Insert(0, cbi);
-            cbi.OnDelete += Delete;
-            cbi.OnEdit += Save;
-        }
-        public void Delete(ComboBoxInput cbi)
-        {
-            loginsAndPasswords.Items.Remove(cbi);
-            Save(null, null);
         }
 
         public void CloseSave()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -73,7 +74,15 @@ namespace RedactorBeta
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (folderer.Children.Count > 0)
+            {
                 (folderer.Children[0] as ElementAndBooleans).CloseSave();
+                new System.Threading.Thread(() =>
+                {
+                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Green; }, System.Windows.Threading.DispatcherPriority.Normal);
+                    Thread.Sleep(1000);
+                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Gray; }, System.Windows.Threading.DispatcherPriority.Normal);
+                }).Start();
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

@@ -4,45 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RedactorBeta"
+             xmlns:lc="clr-namespace:XamlGeneratedNamespace"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel >
         <DockPanel Margin="1" >
-            <Button x:Name="CollapseButton" Content ="▶"  VerticalAlignment="Center" Click="Button_Click" 
-                    BorderThickness="0" Background="Transparent"/>
-            <Label x:Name="contentName" Content="Test" HorizontalAlignment="Left"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <CheckBox Margin="2,0,1,0" VerticalAlignment="Center" Checked="Save"
+            <Button x:Name="CollapseButton" Content ="▶"  VerticalAlignment="Top" Click="Button_Click" 
+                    BorderThickness="0" Background="Transparent" Margin="0,6,0,0"/>
+            <Label x:Name="contentName" Content="Test" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   FontSize="15"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <CheckBox Margin="2,0,1,0" VerticalAlignment="Center" Checked="Save" VerticalContentAlignment="Top"
                           IsChecked="{Binding CanBeChanged}" 
                           ToolTip="Можно ли менять ползователю файл"/>
-                <CheckBox Margin="1,0,1,0" VerticalAlignment="Center" Checked="Save"
+                <CheckBox Margin="1,0,1,0" VerticalAlignment="Center" Checked="Save" VerticalContentAlignment="Top"
                           IsChecked="{Binding CanBeCopied}" 
                           ToolTip="Можно ли копировать файл"/>
-                <CheckBox Margin="1,0,1,0" VerticalAlignment="Center" Checked="Save"
+                <CheckBox Margin="1,0,1,0" VerticalAlignment="Center" Checked="Save" VerticalContentAlignment="Top"
                           IsChecked="{Binding CanBeDeleted}" 
                           ToolTip="Можно ли удалить файл"/>
-                <CheckBox Margin="1,0,2,0" VerticalAlignment="Center" Checked="Save"
+                <CheckBox Margin="1,0,2,0" VerticalAlignment="Center" Checked="Save" VerticalContentAlignment="Top"
                           IsChecked="{Binding HasPassword}" 
-                          ToolTip="Есть ли пароли"/>
+                          ToolTip="Есть ли пароли" />
                 <TextBox InputScope="Number" MinWidth="20"
                          Margin="0,2,3,2" TextAlignment="Center"
-                         Text="{Binding Difficulty}"
-                          ToolTip="Количество попыток ввода пароля"/>
-                <ComboBox Width="200" 
-                          BorderThickness="0"
-                          Background="Transparent"
-                          SelectedIndex="0"
-                          x:Name="loginsAndPasswords"
-                          IsEnabled="{Binding hasPassword}"
-                          ToolTip="Список паролей">
-                    <StackPanel  HorizontalAlignment="Right">
-                        <Button Content="➕" Click="Button_Click_1" 
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center" 
-                            HorizontalAlignment="Right" Margin="2,0,2,0"
-                                ToolTip="Добавить логин с паролем"/>
-                    </StackPanel>
-                </ComboBox>
+                         Text="{Binding Difficulty}" TextChanged="Save"
+                          ToolTip="Количество попыток ввода пароля"
+                         Height="25" VerticalContentAlignment="Top"/>
+                <local:LoginsAndPasswords
+                    x:Name="loginsAndPasswords" Margin="0,4,3,0"/>
             </StackPanel>
         </DockPanel>
 

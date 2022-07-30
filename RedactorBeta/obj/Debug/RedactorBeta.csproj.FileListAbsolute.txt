@@ -21,3 +21,6 @@ D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\ComboBoxInput
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\bin\Debug\Newtonsoft.Json.dll
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\bin\Debug\Newtonsoft.Json.xml
 D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\RedactorBeta.csproj.CopyComplete
+D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\LoginsAndPasswords.g.cs
+D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Programming\0_C#\0_Projects\RedactorBeta\RedactorBeta\obj\Debug\LoginsAndPasswords.baml

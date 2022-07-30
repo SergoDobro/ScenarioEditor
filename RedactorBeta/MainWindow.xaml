@@ -6,23 +6,27 @@
         xmlns:local="clr-namespace:RedactorBeta"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <ScrollViewer CanContentScroll="True">
-        <StackPanel>
-            <DockPanel>
-                <Button Content="Сохранить"
+    <StackPanel>
+        <ScrollViewer CanContentScroll="True">
+            <StackPanel>
+                <DockPanel>
+                    <Button Content="Сохранить"
                         Click="Button_Click_1"
                         Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"
                         />
-                <Button Content="Загрузить (и сохранить)"
+                    <Button Content="Загрузить (и сохранить)"
                         Click="Button_Click"
                         Width="200" HorizontalAlignment="Left" Margin="20,5,5,5"/>
-                <Button Content="Инструкция"
+                    <Button Content="Инструкция"
                         Click="Button_Click_2"
                         Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"/>
-            </DockPanel>
-            <StackPanel x:Name="folderer">
-                
+                </DockPanel>
+                <StackPanel x:Name="folderer">
+
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-    </ScrollViewer>
+        </ScrollViewer>
+        <Rectangle x:Name="indicator" Height="5" VerticalAlignment="Bottom" Fill="Gray"/>
+
+    </StackPanel>
 </Window>
