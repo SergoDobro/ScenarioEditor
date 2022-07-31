@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:RedactorBeta"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <ScrollViewer CanContentScroll="True">
+    <DockPanel>
+        <ScrollViewer DockPanel.Dock="Top" CanContentScroll="True">
             <StackPanel>
                 <DockPanel>
                     <Button Content="Сохранить"
@@ -26,7 +26,8 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <Rectangle x:Name="indicator" Height="5" VerticalAlignment="Bottom" Fill="Gray"/>
+        <Rectangle
+            DockPanel.Dock="Bottom" x:Name="indicator" Height="5" VerticalAlignment="Bottom" Fill="Gray"/>
 
-    </StackPanel>
+    </DockPanel>
 </Window>
