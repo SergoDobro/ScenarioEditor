@@ -21,6 +21,19 @@
                         Click="Button_Click_2"
                         Width="150" HorizontalAlignment="Left" Margin="20,5,5,5"/>
                 </DockPanel>
+
+                <DockPanel VerticalAlignment="Top">
+
+                    <TextBox Text="файлы" ToolTip="Логины и пароли" DockPanel.Dock="Left" Margin="0,6,3,0" Width="174" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="логины и пароли" ToolTip="Логины и пароли" DockPanel.Dock="Right" Margin="0,6,3,0" Width="174" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="🔢" ToolTip="Количество попыток ввода пароля" DockPanel.Dock="Right" Margin="0,5,3,0" Width="15" FontSize="8.5" IsReadOnly="True"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="🔑" ToolTip="Есть ли пароли" DockPanel.Dock="Right" Margin="2,5,1,0" Width="15.9" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="🗑" ToolTip="Можно ли удалить файл" DockPanel.Dock="Right" Margin="2,5,1,0" Width="15.9" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="📤" ToolTip="Можно ли копировать файл" DockPanel.Dock="Right" Margin="2,5,1,0" Width="15.9" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="📝" ToolTip="Можно ли менять ползователю файл" DockPanel.Dock="Right" Margin="2,5,1,0" Width="15.9" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" BorderThickness="0"/>
+                    <TextBox Text="" Visibility="Hidden" DockPanel.Dock="Right" Margin="2,5,1,0" Width="15.9" FontSize="8.5" IsReadOnly="True" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" BorderThickness="0"/>
+                </DockPanel>
+                    
                 <StackPanel x:Name="folderer">
 
                 </StackPanel>

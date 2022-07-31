@@ -12,10 +12,11 @@
                                  Margin="2,0,2,0"
                 TextChanged="TextBox_TextChanged"
                  x:Name="login"
-                 ToolTip="Логин"/>
+                 ToolTip="Логин" 
+                 />
         <TextBox Text="{Binding Pas}"  MinWidth="70"
                                  Margin="2,0,2,0"
-                TextChanged="TextBox_TextChanged" 
+                TextChanged="TextBox_TextChanged"
                  x:Name="password"
                  ToolTip="Пароль"/>
         <Button Content="✖" Click="Button_Click"
