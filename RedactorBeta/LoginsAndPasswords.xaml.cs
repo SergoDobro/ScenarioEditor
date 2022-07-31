@@ -54,6 +54,7 @@ namespace RedactorBeta
             loginsAndPasswords.Children.Insert(loginsAndPasswords.Children.Count-1, cbi);
             cbi.OnDelete += Delete;
             cbi.OnEdit += Save;
+            Save(null, null);
         }
         public void Delete(ComboBoxInput cbi)
         {

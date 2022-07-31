@@ -24,6 +24,7 @@ namespace RedactorBeta
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow getInstance { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace RedactorBeta
                 if (folderer.Children.Count > 0)
                     (folderer.Children[0] as ElementAndBooleans).CloseSave();
             };
+            getInstance = this;
         }
 
         private void ElementAndBooleans_OnOpen(object sender)
@@ -76,15 +78,18 @@ namespace RedactorBeta
             if (folderer.Children.Count > 0)
             {
                 (folderer.Children[0] as ElementAndBooleans).CloseSave();
-                new System.Threading.Thread(() =>
-                {
-                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Green; }, System.Windows.Threading.DispatcherPriority.Normal);
-                    Thread.Sleep(1000);
-                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Gray; }, System.Windows.Threading.DispatcherPriority.Normal);
-                }).Start();
+                Saved();
             }
         }
-
+        public void Saved()
+        {
+            new System.Threading.Thread(() =>
+            {
+                Dispatcher.Invoke(() => { indicator.Fill = Brushes.Green; }, System.Windows.Threading.DispatcherPriority.Normal);
+                Thread.Sleep(1000);
+                Dispatcher.Invoke(() => { indicator.Fill = Brushes.Gray; }, System.Windows.Threading.DispatcherPriority.Normal);
+            }).Start();
+        }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Наведите мышку на галочку, чтобы подписалось её назначение." +

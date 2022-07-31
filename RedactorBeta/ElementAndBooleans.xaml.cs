@@ -132,6 +132,8 @@ namespace RedactorBeta
             loginsAndPasswords.SaveToDataClass(dataClass);
             string str = JsonConvert.SerializeObject(dataClass);
             File.WriteAllText(path + extentionString, str);
+
+            MainWindow.getInstance.Saved();
         }
         public void LoadSettings()
         {
