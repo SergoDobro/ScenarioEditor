@@ -15,16 +15,16 @@
                    FontSize="13"/>
             <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">
                 <CheckBox  Margin="2,5,1,0" VerticalAlignment="Top" Checked="Save" VerticalContentAlignment="Top"
-                          IsChecked="{Binding CanBeChanged}" 
+                          IsChecked="{Binding CanBeChanged}" Unchecked="Save"
                           ToolTip="Можно ли менять ползователю файл"/>
                 <CheckBox Margin="1,5,1,0" VerticalAlignment="Top" Checked="Save" VerticalContentAlignment="Top"
-                          IsChecked="{Binding CanBeCopied}" 
+                          IsChecked="{Binding CanBeCopied}"  Unchecked="Save"
                           ToolTip="Можно ли копировать файл"/>
                 <CheckBox Margin="1,5,1,0" VerticalAlignment="Top" Checked="Save" VerticalContentAlignment="Top"
-                          IsChecked="{Binding CanBeDeleted}" 
+                          IsChecked="{Binding CanBeDeleted}" Unchecked="Save"
                           ToolTip="Можно ли удалить файл"/>
                 <CheckBox Margin="1,5,2,0" VerticalAlignment="Top" Checked="Save" VerticalContentAlignment="Top"
-                          IsChecked="{Binding HasPassword}" 
+                          IsChecked="{Binding HasPassword}"  Unchecked="Save"
                           ToolTip="Есть ли пароли" />
                 <TextBox InputScope="Number" MinWidth="15" VerticalAlignment="Top"
                          Margin="0,6,3,2" TextAlignment="Center"
@@ -38,7 +38,7 @@
         </DockPanel>
 
         <StackPanel Orientation="Vertical" x:Name="panel">
-            
+
         </StackPanel>
     </StackPanel>
 </UserControl>

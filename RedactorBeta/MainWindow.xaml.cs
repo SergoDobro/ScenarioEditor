@@ -25,6 +25,7 @@ namespace RedactorBeta
     public partial class MainWindow : Window
     {
         public static MainWindow getInstance { get; set; }
+        public bool isGreen = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -85,9 +86,15 @@ namespace RedactorBeta
         {
             new System.Threading.Thread(() =>
             {
-                Dispatcher.Invoke(() => { indicator.Fill = Brushes.Green; }, System.Windows.Threading.DispatcherPriority.Normal);
-                Thread.Sleep(1000);
-                Dispatcher.Invoke(() => { indicator.Fill = Brushes.Gray; }, System.Windows.Threading.DispatcherPriority.Normal);
+                try
+                {
+                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Green; }, System.Windows.Threading.DispatcherPriority.Normal);
+                    Thread.Sleep(1000);
+                    Dispatcher.Invoke(() => { indicator.Fill = Brushes.Gray; }, System.Windows.Threading.DispatcherPriority.Normal);
+                }
+                catch
+                {
+                }
             }).Start();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
