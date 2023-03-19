@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="RedactorBeta.ElementAndBooleans"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RedactorBeta"
+             xmlns:lc="clr-namespace:XamlGeneratedNamespace"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel >
+        <DockPanel Margin="0" >
+            <Button x:Name="CollapseButton" Content ="▶"  VerticalAlignment="Top" Click="Button_Collapser" 
+                    BorderThickness="0" Background="Transparent" Margin="0,5,0,0"/>
+            <Label x:Name="contentName" Content="Test" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   FontSize="13"/>
+            <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+                <CheckBox  Margin="2,5,1,0" VerticalAlignment="Top"   VerticalContentAlignment="Top"
+                          IsChecked="{Binding CanBeChanged}"  
+                          ToolTip="Можно ли менять ползователю файл"/>
+                <CheckBox Margin="1,5,1,0" VerticalAlignment="Top"   VerticalContentAlignment="Top"
+                          IsChecked="{Binding CanBeCopied}"   
+                          ToolTip="Можно ли копировать файл"/>
+                <CheckBox Margin="1,5,1,0" VerticalAlignment="Top"   VerticalContentAlignment="Top"
+                          IsChecked="{Binding CanBeDeleted}"  
+                          ToolTip="Можно ли удалить файл"/>
+                <CheckBox Margin="1,5,2,0" VerticalAlignment="Top"   VerticalContentAlignment="Top"
+                          IsChecked="{Binding HasPassword}"   
+                          ToolTip="Есть ли пароли" />
+                <TextBox InputScope="Number" MinWidth="15" VerticalAlignment="Top"
+                         Margin="0,6,3,2" TextAlignment="Center"
+                         Text="{Binding Difficulty}" 
+                         ToolTip="Количество попыток ввода пароля"
+                         Height="20" VerticalContentAlignment="Top"
+                         IsEnabled="{Binding HasPassword}"/>
+                <local:LoginsAndPasswords IsEnabled="{Binding HasPassword}"
+                    x:Name="loginsAndPasswords" Margin="0,6,3,0"/>
+            </DockPanel>
+        </DockPanel>
+
+        <StackPanel Orientation="Vertical" x:Name="panel">
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>
